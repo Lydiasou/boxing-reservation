@@ -11,9 +11,9 @@ class Session < ApplicationRecord
   validates :start_at, presence: true
   validates :end_at, presence: true
   validates :address, inclusion: { in: Session::ADDRESS }, presence: true
-  validates :titile_address, inclusion: { in: Session::TITLE_ADDRESS }, presence: true
+  validates :title_address, inclusion: { in: Session::TITLE_ADDRESS }, presence: true
   validates :coach, inclusion: { in: Session::COACH }, presence: true
   validates :price, presence: true
   validates :max_participation, presence: true
-  validates :description
+  validates :description, presence: true
 end
