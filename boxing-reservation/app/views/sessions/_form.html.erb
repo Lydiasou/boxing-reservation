@@ -1,0 +1,14 @@
+<%= simple_form_for(restaurant) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :date %>
+  <%= f.input :start_at%>
+  <%= f.input :end_at%>
+  <%= f.input :description%>
+  <%= f.input :price%>
+  <%= f.input :max_participation%>
+  <%= f.input :coach, collection: Session::COACH%>
+  <%= f.input :address, collection: Session::ADDRESS%>
+  <%= f.input :title_address, collection: Session::TITLE_ADDRESS%>
+  <%= f.submit "#{ session.persisted? ? 'Update' : 'Create' } Session" %>
+  <%#= link_to 'Back to restaurant', restaurants_path %>
+<% end %>
