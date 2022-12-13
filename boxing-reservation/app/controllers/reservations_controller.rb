@@ -20,9 +20,6 @@ class ReservationsController < ApplicationController
   end
 
   def reservation_params
-    params.require(:reservation).permit(:first_name,
-                                        :last_name,
-                                        :phone_number,
-                                        :email)
+    params.require(:reservation).permit(:total_price)
   end
 end
