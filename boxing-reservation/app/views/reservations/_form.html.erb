@@ -1,7 +1,4 @@
 <%= simple_form_for [session, reservation] do |f| %>
-  <%= f.input :first_name, label: 'first name', as: :string %>
-  <%= f.input :last_name, label: 'last name', as: :string %>
-  <%= f.input :email, label: 'e-mail' %>
-  <%= f.input :phone_number, label: 'phone' %>
-  <%= f.submit "Fly me to the Moooon"%>
+  <%= f.input :total_price, label: 'prix total' %>
+  <%= f.submit "Réserve ta session"%>
 <% end %>

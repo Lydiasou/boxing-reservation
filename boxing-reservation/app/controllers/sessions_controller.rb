@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :set_session, only: [:show, :edit, :destroy]
+  skip_before_action :authenticate_user!, only: %i[index show]
+  before_action :set_session, only: %i[show edit update destroy]
 
   def index
     @session = Session.all
@@ -11,7 +11,6 @@ class SessionsController < ApplicationController
 
   def new
     @session = Session.new
-    authorize @session
   end
 
   def create
@@ -35,8 +34,9 @@ class SessionsController < ApplicationController
 
   def destroy
     # authorize @session
+    @session = Session.find(params[:id])
     @session.destroy
-    redirect_to session_path, status: :see_other
+    redirect_to sessions_path, status: :see_other
   end
 
   private
