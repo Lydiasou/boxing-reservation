@@ -1,0 +1,5 @@
+<h3>les sessions</h3>
+<% @session.each do |ses|%>
+<%= link_to ses.title, session_path(ses)%>
+<br>
+<%end%>

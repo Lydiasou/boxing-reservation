@@ -1,0 +1,6 @@
+<h1><%= @session.title %></h1>
+<p>une session blabla</p>
+<p>voila la session que les utilisatrices peuvent réserver</p>
+
+ <%= render "reservations/form", session: @session, reservation: Reservation.new  %>
+<%= link_to "delete", session_path(@session), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }%>
