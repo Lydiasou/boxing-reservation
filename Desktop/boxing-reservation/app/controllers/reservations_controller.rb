@@ -14,21 +14,21 @@ class ReservationsController < ApplicationController
   def create
     @user = current_user
     @session = Session.find(params[:session_id])
-    @reservation = Reservation.new(reservation_params)
+    @reservation = Reservation.new
     @reservation.session = @session
+    @reservation.total_price = @session.price
     @reservation.user = @user
     if @reservation.save
       redirect_to sessions_path
     end
   end
 
-  private
-
+  # private
   # def set_session_id
   #   @session = Session.find(params[:session_id])
   # end
 
-  def reservation_params
-    params.require(:reservation).permit(:total_price)
-  end
+  # def reservation_params
+  #   params.require(:reservation).permit(:total_price)
+  # end
 end
