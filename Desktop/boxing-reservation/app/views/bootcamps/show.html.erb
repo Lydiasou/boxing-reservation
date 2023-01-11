@@ -8,8 +8,8 @@
 <p><%= @bootcamp.price%></p>
 
 
-
-<%= render "reservations/form", bootcamp: @bootcamp, reservation: Reservation.new  %> <br>
+<%= link_to 'reservations pour ce cours', bootcamp: @bootcamp, reservation: Reservation.new %>
+<%#= render "reservations/form", bootcamp: @bootcamp, reservation: Reservation.new  %> <br>
 <%= link_to 'edit', edit_bootcamp_path %> <br>
 <%= link_to 'back to cours', bootcamps_path %> <br>
 <%= link_to "delete", bootcamp_path(@bootcamp), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }%>
