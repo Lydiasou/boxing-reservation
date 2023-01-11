@@ -1,5 +1,5 @@
 class AddReferencesToReservation < ActiveRecord::Migration[7.0]
   def change
-    add_reference(:reservations, :bootcamp)
+    #add_reference :reservations, :bootcamp, null: false, foreign_key: true
   end
 end
