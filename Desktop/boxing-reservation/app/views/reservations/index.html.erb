@@ -1,5 +1,6 @@
 <h1>Les resa</h1>
 <% @reservation.each do |resa|%>
-<%= link_to resa.total_price%>
+<%=resa.total_price%>
+<%=resa.first_name%>
 <br>
 <%end%>

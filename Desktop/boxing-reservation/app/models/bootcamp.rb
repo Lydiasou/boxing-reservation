@@ -1,4 +1,4 @@
-class Session < ApplicationRecord
+class Bootcamp < ApplicationRecord
   belongs_to :user
   has_many :reservation, dependent: :destroy
 
@@ -10,9 +10,9 @@ class Session < ApplicationRecord
   validates :date, presence: true
   validates :start_at, presence: true
   validates :end_at, presence: true
-  validates :address, inclusion: { in: Session::ADDRESS }, presence: true
-  validates :title_address, inclusion: { in: Session::TITLE_ADDRESS }, presence: true
-  validates :coach, inclusion: { in: Session::COACH }, presence: true
+  validates :address, inclusion: { in: Bootcamp::ADDRESS }, presence: true
+  validates :title_address, inclusion: { in: Bootcamp::TITLE_ADDRESS }, presence: true
+  validates :coach, inclusion: { in: Bootcamp::COACH }, presence: true
   validates :price, presence: true
   validates :max_participation, presence: true
   validates :description, presence: true

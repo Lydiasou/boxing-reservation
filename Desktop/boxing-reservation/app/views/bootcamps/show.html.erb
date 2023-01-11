@@ -1,0 +1,15 @@
+<h1><%= @bootcamp.title %></h1> <br>
+<p> <%= @bootcamp.description %></p> <br>
+<p><%= @bootcamp.date %></p>
+<p><%= @bootcamp.start_at %></p>
+<p><%= @bootcamp.end_at %></p>
+<p><%= @bootcamp.coach %></p>
+<p><%= @bootcamp.title_address%></p>
+<p><%= @bootcamp.price%></p>
+
+
+
+<%= render "reservations/form", bootcamp: @bootcamp, reservation: Reservation.new  %> <br>
+<%= link_to 'edit', edit_bootcamp_path %> <br>
+<%= link_to 'back to cours', bootcamps_path %> <br>
+<%= link_to "delete", bootcamp_path(@bootcamp), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }%>

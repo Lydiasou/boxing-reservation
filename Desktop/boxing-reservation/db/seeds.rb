@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-Session.destroy_all
+Bootcamp.destroy_all
 Reservation.destroy_all
 User.destroy_all
 
@@ -14,7 +14,7 @@ user_one = User.create!(
   password: "123456"
 )
 
-session_one = Session.new(
+bootcamp_one = Bootcamp.new(
   title: 'Boxing',
   date: DateTime.parse("12/12/2022"),
   start_at: DateTime.parse("12/12/2022 10:00"),
@@ -29,5 +29,5 @@ session_one = Session.new(
   l’enrichissant avec des éléments html qui en définissent
   la structure, '
 )
-session_one.user = user_one
-session_one.save!
+bootcamp_one.user = user_one
+bootcamp_one.save!

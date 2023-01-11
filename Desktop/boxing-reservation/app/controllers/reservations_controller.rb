@@ -1,5 +1,5 @@
 class ReservationsController < ApplicationController
-  # before_action :set_session_id, only: %i[new create]
+  # before_action :set_bootcamp_id, only: %i[new create]
   skip_before_action :authenticate_user!
 
   def index
@@ -7,28 +7,28 @@ class ReservationsController < ApplicationController
   end
 
   def new
-    @session = Session.find(params[:session_id])
+    @bootcamp = Bootcamp.find(params[:bootcamp_id])
     @reservation = Reservation.new
   end
 
   def create
     @user = current_user
-    @session = Session.find(params[:session_id])
-    @reservation = Reservation.new
-    @reservation.session = @session
-    @reservation.total_price = @session.price
+    @bootcamp = Bootcamp.find(params[:bootcamp_id])
+    @reservation = Reservation.new(reservation_params)
+    @reservation.bootcamp = @bootcamp
+    @reservation.total_price = @bootcamp.price
     @reservation.user = @user
-    if @reservation.save
-      redirect_to sessions_path
-    end
+    @reservation.save
+    redirect_to bootcamps_path
   end
 
-  # private
-  # def set_session_id
-  #   @session = Session.find(params[:session_id])
+  private
+
+  # def set_bootcamp_id
+  #   @bootcamp = Bootcamp.find(params[:bootcamp_id])
   # end
 
-  # def reservation_params
-  #   params.require(:reservation).permit(:total_price)
-  # end
+  def reservation_params
+    params.require(:reservation).permit(:first_name)
+  end
 end

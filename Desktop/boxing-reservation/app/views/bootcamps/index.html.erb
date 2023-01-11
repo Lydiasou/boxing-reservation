@@ -1,0 +1,8 @@
+<h3>les cours</h3>
+<% @bootcamp.each do |boot|%>
+<%= link_to boot.title, bootcamp_path(boot)%>
+<br>
+<%end%>
+<br>
+
+<%= link_to 'create bootcamp', new_bootcamp_path %>

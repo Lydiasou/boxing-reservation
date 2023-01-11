@@ -1,4 +1,4 @@
-<%= simple_form_for [session, reservation] do |f| %>
-  <%#= f.input :total_price, label: 'prix total' %>
-  <%= f.submit "Réserve ta session"%>
+<%= simple_form_for [bootcamp, reservation] do |f| %>
+  <%= f.input :first_name, label: 'ton prénom' %>
+  <%= f.submit "Réserve ton cours"%>
 <% end %>
